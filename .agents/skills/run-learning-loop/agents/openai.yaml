@@ -1,0 +1,4 @@
+interface:
+  display_name: "运行学习闭环"
+  short_description: "把一个AI工程问题转化为可验证实验、工程判断和可复用知识资产"
+  default_prompt: "Use $run-learning-loop to turn one AI engineering topic into a tested, reusable learning asset."

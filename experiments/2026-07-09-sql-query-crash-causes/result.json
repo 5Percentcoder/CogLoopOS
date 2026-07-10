@@ -1,0 +1,36 @@
+{
+  "experiment": "2026-07-09-sql-query-crash-causes",
+  "environment": {
+    "database": "SQLite 3.50.4",
+    "python": "3.13.7",
+    "rows": 75000,
+    "payload_size": 256,
+    "fetchmany_batch_size": 500
+  },
+  "contract": {
+    "minimum_peak_memory_ratio": 10.0,
+    "required_rows_per_mode": 75000
+  },
+  "fetchall": {
+    "mode": "fetchall",
+    "rows_consumed": 75000,
+    "peak_bytes": 29498837,
+    "duration_seconds": 0.1423
+  },
+  "fetchmany": {
+    "mode": "fetchmany",
+    "rows_consumed": 75000,
+    "peak_bytes": 392567,
+    "duration_seconds": 0.1222
+  },
+  "observed": {
+    "fetchall_to_fetchmany_peak_ratio": 75.14,
+    "same_row_count": true
+  },
+  "passed": true,
+  "limitations": [
+    "tracemalloc measures Python allocations, not all native driver memory.",
+    "SQLite behavior does not represent every database server or driver.",
+    "The experiment demonstrates memory amplification without inducing an OOM crash."
+  ]
+}

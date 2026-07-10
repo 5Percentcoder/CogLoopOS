@@ -1,0 +1,4 @@
+interface:
+  display_name: "审查学习系统"
+  short_description: "扫描学习闭环健康状态并生成可供人工审查的周度维护报告"
+  default_prompt: "Use $review-learning-os to inspect this learning system and generate the current weekly review."

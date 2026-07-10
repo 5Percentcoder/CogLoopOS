@@ -1,0 +1,124 @@
+{
+  "experiment": "2026-07-09-controlled-query-expansion",
+  "contract": {
+    "minimum_recall_at_1_improvement": 0.25,
+    "minimum_non_expansion_guardrail_delta": 0.0
+  },
+  "baseline": {
+    "recall_at_1": 0.6667,
+    "non_expansion_recall_at_1": 1.0,
+    "cases": [
+      {
+        "query": "RAG pipeline",
+        "relevant": "rag",
+        "uses_expansion": true,
+        "predicted": "ops-rag",
+        "score": 2,
+        "correct": false
+      },
+      {
+        "query": "MCP interface",
+        "relevant": "mcp",
+        "uses_expansion": true,
+        "predicted": "cert-mcp",
+        "score": 1,
+        "correct": false
+      },
+      {
+        "query": "hybrid search dense sparse",
+        "relevant": "hybrid-search",
+        "uses_expansion": false,
+        "predicted": "hybrid-search",
+        "score": 4,
+        "correct": true
+      },
+      {
+        "query": "cross encoder reranker",
+        "relevant": "reranker",
+        "uses_expansion": false,
+        "predicted": "reranker",
+        "score": 3,
+        "correct": true
+      },
+      {
+        "query": "GraphRAG multi hop",
+        "relevant": "graphrag",
+        "uses_expansion": false,
+        "predicted": "graphrag",
+        "score": 3,
+        "correct": true
+      },
+      {
+        "query": "chunking overlap retrieval",
+        "relevant": "chunking",
+        "uses_expansion": false,
+        "predicted": "chunking",
+        "score": 3,
+        "correct": true
+      }
+    ]
+  },
+  "controlled_expansion": {
+    "recall_at_1": 1.0,
+    "non_expansion_recall_at_1": 1.0,
+    "cases": [
+      {
+        "query": "RAG pipeline",
+        "relevant": "rag",
+        "uses_expansion": true,
+        "predicted": "rag",
+        "score": 3,
+        "correct": true
+      },
+      {
+        "query": "MCP interface",
+        "relevant": "mcp",
+        "uses_expansion": true,
+        "predicted": "mcp",
+        "score": 4,
+        "correct": true
+      },
+      {
+        "query": "hybrid search dense sparse",
+        "relevant": "hybrid-search",
+        "uses_expansion": false,
+        "predicted": "hybrid-search",
+        "score": 4,
+        "correct": true
+      },
+      {
+        "query": "cross encoder reranker",
+        "relevant": "reranker",
+        "uses_expansion": false,
+        "predicted": "reranker",
+        "score": 3,
+        "correct": true
+      },
+      {
+        "query": "GraphRAG multi hop",
+        "relevant": "graphrag",
+        "uses_expansion": false,
+        "predicted": "graphrag",
+        "score": 3,
+        "correct": true
+      },
+      {
+        "query": "chunking overlap retrieval",
+        "relevant": "chunking",
+        "uses_expansion": false,
+        "predicted": "chunking",
+        "score": 3,
+        "correct": true
+      }
+    ]
+  },
+  "observed": {
+    "recall_at_1_improvement": 0.3333,
+    "non_expansion_guardrail_delta": 0.0
+  },
+  "passed": true,
+  "limitations": [
+    "Toy data validates the mechanism and workflow, not production impact.",
+    "The experiment does not measure precision, latency, or answer quality."
+  ]
+}
